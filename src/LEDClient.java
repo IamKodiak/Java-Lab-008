@@ -33,8 +33,6 @@ public class LEDClient {
         for(int i=0; i<times; i++) {
             send(color);
             TimeUnit.MILLISECONDS.sleep(miliseconds);
-            send(LEDClient.OFF);
-            TimeUnit.MILLISECONDS.sleep(miliseconds);
         }
     }
 
@@ -47,10 +45,37 @@ public class LEDClient {
     public static void main(String[] args) {
         LEDClient ledClient = new LEDClient("tcp", "192.168.1.117", 5001);
         try {
-            int[] color = {255, 255, 0};
-            int[] color1 = {0, 21, 255};
+            int[] color = {0, 255, 0};
+            int[] color1 = {0, 204, 0};
+            int[] color2 = {0, 153, 0};
+            int[] color3 = {0, 102, 0};
+            int[] color4 = {0, 51, 0};
+            int[] color5 = {0, 0, 0};
+            int[] color6 = {51, 0, 0};
+            int[] color7 = {102, 0, 0};
+            int[] color8 = {153, 0, 0};
+            int[] color9 = {204, 0, 0};
+            int[] color10 = {255, 0, 0};
             for (int i = 0; i < 30; i++) {
-                ledClient.blinkN(color, 1, 250);
+                ledClient.blinkN(color, 3, 250);
+                ledClient.blinkN(color1, 1, 250);
+                ledClient.blinkN(color2, 1, 250);
+                ledClient.blinkN(color3, 1, 250);
+                ledClient.blinkN(color4, 1, 250);
+                ledClient.blinkN(color5, 1, 250);
+                ledClient.blinkN(color6, 1, 250);
+                ledClient.blinkN(color7, 1, 250);
+                ledClient.blinkN(color8, 1, 250);
+                ledClient.blinkN(color9, 1, 250);
+                ledClient.blinkN(color10, 3, 250);
+                ledClient.blinkN(color9, 1, 250);
+                ledClient.blinkN(color8, 1, 250);
+                ledClient.blinkN(color7, 1, 250);
+                ledClient.blinkN(color6, 1, 250);
+                ledClient.blinkN(color5, 1, 250);
+                ledClient.blinkN(color4, 1, 250);
+                ledClient.blinkN(color3, 1, 250);
+                ledClient.blinkN(color2, 1, 250);
                 ledClient.blinkN(color1, 1, 250);
             }
                 ledClient.close();
@@ -66,4 +91,7 @@ int[] color1 = {0, 21, 255};
 
 int[] color = {0, 255, 85};
 int[] color1 = {255, 0, 30};
+
+send(LEDClient.OFF);
+TimeUnit.MILLISECONDS.sleep(miliseconds);
  */
